@@ -1,0 +1,18 @@
+<h1>Users#new</h1>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |error| %>
+		<p><%= error.to_s %></p>
+	<% end %>
+<% end %>
+<p>Find me in app/views/users/new.html.erb</p>
+<%= form_for(@user) do |f| %>
+	<%= f.label :first_name, 'first name, sucka!' %>
+	<%= f.text_field :first_name %>
+	<%= f.label :last_name, 'last name, sucka!' %>
+	<%= f.text_field :last_name %>
+	<%= f.label :email, 'email!' %>
+	<%= f.text_field :email %>
+	<%= f.label :password, 'password!' %>
+	<%= f.password_field :password %>
+	<%= f.submit 'MAKE NEW USER' %>
+<% end %>
